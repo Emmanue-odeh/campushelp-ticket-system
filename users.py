@@ -1,3 +1,4 @@
+
 from validation import validate_name, validate_email
 
 students = []
@@ -25,8 +26,10 @@ def register_student(name, email):
         "name": name.strip(),
         "email": email.strip()
     }
+
     students.append(student)
     return True
+
 
 def find_student(student_id):
     for student in students:
@@ -34,6 +37,8 @@ def find_student(student_id):
             return student
 
     return None
+
+
 def view_staff():
     for staff in staff_members:
         print(staff)

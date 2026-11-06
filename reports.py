@@ -13,6 +13,7 @@ def count_tickets_by_status(tickets):
 
     return counts
 
+
 def generate_report(tickets):
     report = {
         "total_tickets": len(tickets),
