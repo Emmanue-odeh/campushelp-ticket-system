@@ -26,6 +26,20 @@ def update_ticket_status(tickets, ticket_id, new_status):
     return ticket
 
 def create_ticket(tickets, student_id, category, description, priority):
+    allowed_priorities = ["low", "medium", "high"]
+
+    if priority not in allowed_priorities:
+         return None
+    
+    if not description.strip():
+        return None
+
+    if not category.strip():
+        return None
+
+    if not isinstance(student_id, int) or student_id <= 0:
+        return None
+    
     ticket_id = generate_ticket_id(tickets)
 
     ticket = {
@@ -65,15 +79,3 @@ new_ticket = create_ticket(
                      #   create_ticket() — creates and stores tickets.
 
                      #   find_ticket() — searches for tickets using their IDs.
-
-second_ticket = create_ticket(
-    tickets, 2, "Laptop",
-    "My laptop is not working", "medium"
-)
-found_ticket = find_ticket(tickets, 2)
-
-print(found_ticket)
-
-updated_ticket = update_ticket_status(tickets, 2, "resolved")
-
-print(updated_ticket)
