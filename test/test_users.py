@@ -1,6 +1,7 @@
 from users import (
     register_student,
     register_staff,
+    find_student,
     students,
     staff_members
 )
@@ -39,3 +40,17 @@ def test_invalid_student_name():
     result = register_student("   ", "john@gmail.com")
 
     assert result == False
+
+def test_find_student():
+    register_student("Emmanuel", "emmanuel@gmail.com")
+
+    student = find_student(1)
+
+    assert student is not None
+    assert student["name"] == "Emmanuel"
+    assert student["student_id"] == 1
+
+def test_find_student_not_found():
+    student = find_student(99)
+
+    assert student is None
