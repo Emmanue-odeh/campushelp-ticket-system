@@ -29,7 +29,7 @@ def create_ticket(tickets, student_id, category, description, priority):
     allowed_priorities = ["low", "medium", "high"]
 
     if priority not in allowed_priorities:
-         return None
+        return None
     
     if not description.strip():
         return None
@@ -65,13 +65,8 @@ def create_ticket(tickets, student_id, category, description, priority):
                       # Lists — to store multiple tickets.
 
 
-new_ticket = create_ticket(
-    tickets,
-    1,
-    "Wi-Fi",
-    "Campus Wi-Fi is not working",
-    "high"
-)
+
+
                 # Three important functions we have built
 
                      #   generate_ticket_id() — generates ticket IDs.

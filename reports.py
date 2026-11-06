@@ -21,10 +21,3 @@ def generate_report(tickets):
 
     return report
 
-tickets = [
-    {"ticket_id": 1, "status": "pending"},
-    {"ticket_id": 2, "status": "resolved"},
-    {"ticket_id": 3, "status": "pending"},
-    {"ticket_id": 4, "status": "in_progress"},
-    {"ticket_id": 5, "status": "resolved"}
-]
