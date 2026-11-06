@@ -1,3 +1,4 @@
+
 from validation import validate_name, validate_email
 
 students = []
@@ -7,7 +8,6 @@ staff_members = []
 def view_students():
     for student in students:
         print(student)
-
 
 
 def register_student(name, email):
@@ -30,6 +30,13 @@ def register_student(name, email):
     students.append(student)
     return True
 
+
+def find_student(student_id):
+    for student in students:
+        if student["student_id"] == student_id:
+            return student
+
+    return None
 
 
 def view_staff():
@@ -54,15 +61,5 @@ def register_staff(name, email):
         "email": email.strip()
     }
 
-
     staff_members.append(staff)
     return True
-
-
-
-def find_student(student_id):
-    for student in students:
-        if student["student_id"] == student_id:
-            return student
-
-    return None
